@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
-    
-    <!-- External CSS -->
+
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- Internal CSS -->
+
     <style>
         body {
             font-family: Verdana, sans-serif;
-            background-color: #f4f4f4;
+            background-image: url('https://www.bing.com/images/search?view=detailV2&id=83A5E6F2C6445E2969AA8CAC1E981A4548275B25&thid=OIP.LTFqNaldq0Ljgh40mjrIiwHaEJ&mediaurl=https%3a%2f%2fpng.pngtree.com%2fthumb_back%2ffh260%2fbackground%2f20230526%2fpngtree-d-art-in-the-form-of-abstract-blue-and-pink-geometric-image_2646187.jpg&exph=359&expw=640&q=background+forms+art&simid=608044602808034035&ck=8A55D3A5188774479D4DCBA1F7C7F081&itb=0&FORM=IVCLIG');
+            background-size: cover; /* Make the image cover the entire screen */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
             margin: 20px;
             text-align: center;
         }
-        .form-container {
-            background-color: white;
+        .form-container {   /* Styling for the form container */
+            background-color: rgb(175, 9, 9);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -25,7 +26,7 @@
             margin: auto;
             text-align: left;
         }
-        input[type="text"], input[type="email"], input[type="password"] {
+        input[type="text"], input[type="email"], input[type="password"] {   /* Styling for text input, email input, and password input */
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -33,7 +34,7 @@
             border-radius: 5px;
             font-size: 16px;
         }
-        input[type="submit"] {
+        input[type="submit"] {    /* Styling for the submit button */
             background-color: #007bff;
             color: white;
             padding: 10px;
@@ -45,19 +46,19 @@
         input[type="submit"]:hover {
             background-color: #0056b3;
         }
-        .error-message {
+        .error-message {    /* Styling for error messages */
             color: red;
             font-size: 14px;
             display: none;
         }
     </style>
     <script>
-        function validateForm(event) {
+        function validateForm(event) {      /* Function to validate the form when it's submitted */
             let name = document.getElementById("name").value;
             let nameError = document.getElementById("nameError");
             let nameRegex = /^[A-Za-z ]+$/;
             
-            if (!nameRegex.test(name)) {
+            if (!nameRegex.test(name)) {       
                 nameError.style.display = "block";
                 event.preventDefault();
             } else {
@@ -70,8 +71,8 @@
     <h1>Register</h1>
     <div class="form-container">
         <form onsubmit="validateForm(event)">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required>
+            <label for="name">Full Name:</label>        
+            <input type="text" id="name" name="name" required>      <!-- Form container to wrap the registration form elements -->
             <div id="nameError" class="error-message">Please enter a valid name (letters and spaces only).</div>
 
             <label for="email">Email Address:</label>
